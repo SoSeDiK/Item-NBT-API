@@ -2,6 +2,7 @@ package de.tr7zw.changeme.nbtapi.utils;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -48,7 +49,7 @@ public enum MinecraftVersion {
     private static Logger logger = Logger.getLogger("NBTAPI");
 
     // NBT-API Version
-    protected static final String VERSION = "2.15.6";
+    protected static final String VERSION = "2.15.7";
 
     private final int versionId;
     private final boolean mojangMapping;
@@ -157,8 +158,22 @@ public enum MinecraftVersion {
         } catch (Exception ex) {
             logger.info("[NBTAPI] Found Minecraft: " + Bukkit.getServer().getBukkitVersion().split("-")[0]
                     + "! Trying to find NMS support");
-            version = VERSION_TO_REVISION.getOrDefault(Bukkit.getServer().getBukkitVersion().split("-")[0],
-                    MinecraftVersion.UNKNOWN);
+            version = VERSION_TO_REVISION.get(Bukkit.getServer().getBukkitVersion().split("-")[0]);
+            if (version == null) {
+                // check for modern versions with the new versioning scheme, also the new paper version format
+                String versionString = Bukkit.getServer().getBukkitVersion().split("-")[0].split(".build")[0];
+                for (Entry<String, MinecraftVersion> entry : VERSION_TO_REVISION.entrySet()) {
+                    if (versionString.startsWith(entry.getKey()) && version == null) {
+                        version = entry.getValue();
+                        // pick the highest revision that matches the version string, in case 26.1.3 is somehow different to 26.1
+                    } else if (versionString.startsWith(entry.getKey()) && entry.getValue().getVersionId() > version.getVersionId()) {
+                        version = entry.getValue();
+                    }
+                }
+            }
+            if (version == null) {
+                version = UNKNOWN;
+            }
         }
         if (version != UNKNOWN) {
             logger.info("[NBTAPI] NMS support '" + version.name() + "' loaded!");
