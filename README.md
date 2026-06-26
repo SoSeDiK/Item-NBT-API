@@ -1,13 +1,15 @@
 # Item-NBT-API
 
+[![Modrinth](https://img.shields.io/modrinth/dt/nbtapi?logo=modrinth&label=Modrinth%20downloads)](https://modrinth.com/plugin/nbtapi)
+[![Discord](https://img.shields.io/discord/342814924310970398?color=%237289DA&label=Discord&logo=discord&logoColor=white)](https://discordapp.com/invite/yk4caxM)
+[![Ko-fi](https://img.shields.io/badge/Support%20development-Ko--fi-gray?logo=ko-fi&color=FF5E5B)](https://ko-fi.com/tr7zw)
+
 Add custom NBT tags to Items/Tiles/Entities without NMS! Modify NBT and store it in Files, other NBT, or as String in yaml/json/SQL/Redis.
 [Server Owner/Developer Wiki](https://github.com/tr7zw/Item-NBT-API/wiki)
 
 ### Build/Maven/Sonar Status
 
 [![Build Status](https://ci.codemc.org/buildStatus/icon?job=Tr7zw%2FItem-NBT-API)](https://ci.codemc.org/job/Tr7zw/job/Item-NBT-API/)[![](https://sonarcloud.io/api/project_badges/measure?project=tr7zw_Item-NBT-API&metric=ncloc)](https://sonarcloud.io/summary/overall?id=tr7zw_Item-NBT-API)[![](https://sonarcloud.io/api/project_badges/measure?project=tr7zw_Item-NBT-API&metric=duplicated_lines_density)](https://sonarcloud.io/summary/overall?id=tr7zw_Item-NBT-API)[![](https://sonarcloud.io/api/project_badges/measure?project=tr7zw_Item-NBT-API&metric=sqale_rating)](https://sonarcloud.io/summary/overall?id=tr7zw_Item-NBT-API)
-[![Discord](https://img.shields.io/discord/342814924310970398?color=%237289DA&label=Discord&logo=discord&logoColor=white)](https://discordapp.com/invite/yk4caxM)
-[![Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dtr7zw%26type%3Dpatrons&style=for-the-badge)](https://www.patreon.com/tr7zw)
 
 ### SpigotMC Status
 
